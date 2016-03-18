@@ -1,5 +1,5 @@
 // Constants definitions
-const APP_ROOT = __dirname + '/app';
+const APP_PATH = __dirname + '/app';
 
 // RequireJS
 var express = require('express');
@@ -15,11 +15,11 @@ router.use(function timeLog(req, res, next) {
 
 // Route mappings
 router.get('/*.*', function(req, res) {
-    res.sendFile(APP_ROOT + req.url);
+    res.sendFile(APP_PATH + req.url);
 });
 
 router.get('/*', function(req, res) {
-    res.sendFile(APP_ROOT + req.url + '.js');
+    res.sendFile(APP_PATH + req.url + '.js');
 });
 
 module.exports = router;
